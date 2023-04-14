@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
+        <IsPackable>true</IsPackable>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <PackageDescription>Enforce our coding practices in your projects with our NuGet package's default settings for Style Cop Analyzers.</PackageDescription>
+        <PackageTags>analyzers;stylecop;defaults</PackageTags>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.435">
+            <PrivateAssets>runtime; build; native; contentfiles</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <!-- TFM -->
+        <None Pack="true" PackagePath="build" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.props" />
+        <None Pack="true" PackagePath="build" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.targets" />
+        <!-- TFMs -->
+        <None Pack="true" PackagePath="buildMultiTargeting" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.props" />
+        <None Pack="true" PackagePath="buildMultiTargeting" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.targets" />
+        <!-- Transitive -->
+        <None Pack="true" PackagePath="buildTransitive" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.props" />
+        <None Pack="true" PackagePath="buildTransitive" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.targets" />
+        <!-- Assets -->
+        <None Pack="true" PackagePath="" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.globalconfig" />
+        <None Pack="true" PackagePath="" Include="stylecop.json" />
+        <!-- README -->
+        <None Pack="true" PackagePath="" Include="$(SolutionDir)/README.md" />
+    </ItemGroup>
+</Project>
