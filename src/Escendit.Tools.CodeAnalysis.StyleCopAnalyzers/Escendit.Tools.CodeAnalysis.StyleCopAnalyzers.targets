@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <ItemGroup>
+        <EditorConfigFiles Include="$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)\..\Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.globalconfig'))">
+            <Link>Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.globalconfig</Link>
+            <Visible>false</Visible>
+        </EditorConfigFiles>
+        <AdditionalFiles Include="$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)\..\stylecop.json'))">
+            <Link>stylecop.json</Link>
+            <Visible>false</Visible>
+        </AdditionalFiles>
+    </ItemGroup>
+</Project>
