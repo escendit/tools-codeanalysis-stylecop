@@ -32,12 +32,15 @@ jobs:
           dotnet-version: |
             9.x
 
-      - name: Set Default VERSION
-        run: echo "VERSION=0.0.0" >> $GITHUB_ENV
+      - name: Set Default TAG
+        run: echo "TAG=v0.0.0" >> $GITHUB_ENV
 
-      - name: Set VERSION variable from tag
-        run: echo "VERSION=${{ github.event.release.tag_name}}" >> $GITHUB_ENV
+      - name: Set TAG variable from tag
+        run: echo "TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
         if: ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
+
+      - name: Set VERSION variable
+        run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
 
       - name: Read VERSION variable
         run: echo "${VERSION}"
