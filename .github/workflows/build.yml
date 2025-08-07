@@ -29,12 +29,15 @@ jobs:
           dotnet-version: |
             9.x
 
+      - name: Set Default VERSION
+        run: echo "VERSION=0.0.0" >> $GITHUB_ENV
+
       - name: Set VERSION variable from tag
         run: echo "VERSION=${{ github.event.release.tag_name}}" >> $GITHUB_ENV
         if: ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
 
       - name: Read VERSION variable
-        run: echo "${VERSION:0.0.0}"
+        run: echo "${VERSION}"
 
       - name: Restore .NET Packages
         run: dotnet restore
