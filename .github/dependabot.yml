@@ -11,11 +11,6 @@ updates:
     labels:
       - dependencies/github-actions
 
-  - package-ecosystem: "nuget"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-
   # .NET SDK
   - package-ecosystem: dotnet-sdk
     directory: /
