@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <DevelopmentDependency>true</DevelopmentDependency>
@@ -27,7 +26,6 @@
         <None Pack="true" PackagePath="buildTransitive" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.targets" />
         <!-- Assets -->
         <None Pack="true" PackagePath="" Include="Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.globalconfig" />
-        <None Pack="true" PackagePath="" Include="stylecop.json" />
         <!-- README -->
         <None Pack="true" PackagePath="" Include="$(SolutionDir)/README.md" />
     </ItemGroup>
