@@ -29,11 +29,17 @@ jobs:
           dotnet-version: |
             9.x
 
+      - name: Set VERSION variable from tag
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+
+      - name: Read VERSION variable
+        run: echo "${VERSION}"
+
       - name: Restore .NET Packages
         run: dotnet restore
 
       - name: Build .NET Solution
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Release --no-restore /p:Version=${VERSION}
 
       - name: Test .NET Solution
         run: dotnet test --configuration Release --no-build --filter="Category=UnitTest|Category=IntegrationTest" --logger "trx;LogFilePrefix=test-results"

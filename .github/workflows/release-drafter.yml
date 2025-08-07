@@ -19,6 +19,15 @@ on:
         options:
           - release
           - prerelease
+      identifier:
+        type: string
+        default: rc
+        description: Pre-Release Identifier
+        required: false
+      include-pre-releases:
+        type: boolean
+        default: true
+        description: Include Pre-Releases
 
 concurrency:
   group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.number) || github.ref }}
@@ -36,5 +45,7 @@ jobs:
         uses: release-drafter/release-drafter@v6.1.0
         with:
           prerelease: ${{ github.event.inputs.release-type != 'release' }}
+          prerelease-identifier: ${{ github.event.inputs.identifier }}
+          include-pre-releases: ${{ github.event.inputs.include-pre-releases }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
