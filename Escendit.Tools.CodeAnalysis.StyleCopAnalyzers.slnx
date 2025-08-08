@@ -1,0 +1,6 @@
+<Solution>
+    <Folder Name="/src/">
+        <Project
+                Path="src/Escendit.Tools.CodeAnalysis.StyleCopAnalyzers/Escendit.Tools.CodeAnalysis.StyleCopAnalyzers.csproj"/>
+    </Folder>
+</Solution>
