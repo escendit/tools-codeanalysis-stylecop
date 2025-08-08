@@ -1,7 +1,7 @@
 <Project>
     <PropertyGroup>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/escendit/Escendit.Tools.CodeAnalysis.StyleCopAnalyzers</RepositoryUrl>
+        <RepositoryUrl>https://github.com/escendit/tools-codeanalysis-stylecop</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Escendit.Tools.Branding">
