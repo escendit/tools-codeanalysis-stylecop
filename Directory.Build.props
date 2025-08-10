@@ -1,5 +1,8 @@
 <Project>
     <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <PropertyGroup>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/escendit/tools-codeanalysis-stylecop</RepositoryUrl>
     </PropertyGroup>
