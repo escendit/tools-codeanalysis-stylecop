@@ -1,11 +1,20 @@
 <Project>
+    <!-- NuGet Restore -->
     <PropertyGroup>
-        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <RestoreLockedMode Condition="'$(CI)' == 'true'">true</RestoreLockedMode>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     </PropertyGroup>
+    <!-- SourceLink -->
     <PropertyGroup>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/escendit/tools-codeanalysis-stylecop</RepositoryUrl>
+        <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
     </PropertyGroup>
+    <!-- Package Management -->
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <!-- Package Commons -->
     <ItemGroup>
         <PackageReference Include="Escendit.Tools.Branding">
             <PrivateAssets>all</PrivateAssets>
